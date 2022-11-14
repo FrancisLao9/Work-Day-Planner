@@ -24,19 +24,66 @@ var nameMonth;
 var nameDay;
 
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  
+
+  //using GetItem to retrieve information from localstorage
+    $('#desc1').val(localStorage.getItem('#desc1'));
+    $('#desc2').val(localStorage.getItem('#desc2'));
+    $('#desc3').val(localStorage.getItem('#desc3'));
+    $('#desc4').val(localStorage.getItem('#desc4'));
+    $('#desc5').val(localStorage.getItem('#desc5'));
+    $('#desc6').val(localStorage.getItem('#desc6'));
+    $('#desc7').val(localStorage.getItem('#desc7'));
+    $('#desc8').val(localStorage.getItem('#desc8'));
+    $('#desc9').val(localStorage.getItem('#desc9'));
+
+  //using setItem to save information with each button and their corresponding blocks
+    $('#button1').on('click', function() {
+      let newText = $('#desc1').val();
+      $('#desc1').text(newText);
+      localStorage.setItem('#desc1',newText);
+    })
+    $('#button2').on('click', function() {
+      let newText = $('#desc2').val();
+      $('#desc2').text(newText);
+      localStorage.setItem('#desc2',newText);
+    })
+    $('#button3').on('click', function() {
+      let newText = $('#desc3').val();
+      $('#desc3').text(newText);
+      localStorage.setItem('#desc3',newText);
+    })
+    $('#button4').on('click', function() {
+      let newText = $('#desc4').val();
+      $('#desc4').text(newText);
+      localStorage.setItem('#desc4',newText);
+    })
+    $('#button5').on('click', function() {
+      let newText = $('#desc5').val();
+      $('#desc5').text(newText);
+      localStorage.setItem('#desc5',newText);
+    })
+    $('#button6').on('click', function() {
+      let newText = $('#desc6').val();
+      $('#desc6').text(newText);
+      localStorage.setItem('#desc6',newText);
+    })
+    $('#button7').on('click', function() {
+      let newText = $('#desc7').val();
+      $('#desc7').text(newText);
+      localStorage.setItem('#desc7',newText);
+    })
+    $('#button8').on('click', function() {
+      let newText = $('#desc8').val();
+      $('#desc8').text(newText);
+      localStorage.setItem('#desc8',newText);
+    })
+    $('#button9').on('click', function() {
+      let newText = $('#desc9').val();
+      $('#desc9').text(newText);
+      localStorage.setItem('#desc9',newText);
+    })
+
+  $(function timeBlock() {//using if-else to color-coordinate time blocks
   if (currentHour == 8){ //9 AM
     $(hour9).addClass("present"); //Present Time
     $(hour9).removeClass("past future");
@@ -247,14 +294,10 @@ $(function () {
     $(hour17).addClass("future");
     $(hour17).removeClass("past present");
   }
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+  })
   
 
-
-  // TODO: Add code to display the current date in the header of the page.
+$(function daydatedisplay(){//Organizing day and month information to display on the header
   if (day == 0){ //If Statement to declare dayName to display
     dayName = "Sunday";
   } else if (day == 1){
@@ -270,7 +313,6 @@ $(function () {
   } else if (day == 6){
     dayName = "Saturday";
   }
-
   if (dateMonth == 1){ //If Statement to declare nameMonth to display
     nameMonth = "January";
   } else if (dateMonth == 2) {
@@ -296,6 +338,6 @@ $(function () {
   } else if (dateMonth == 12) {
     nameMonth = "December";
   }
-
   currentDat.text(dayName+", "+nameMonth+" "+dateDay+", "+year); //Displays text for day and date
+  })
 });

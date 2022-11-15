@@ -19,7 +19,7 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ## Usage
 
-[Link to website]()
+[Link to website](https://francislao9.github.io/Work-Day-Planner/)
 
 ![alt text](assets/screenshot.png)
 
